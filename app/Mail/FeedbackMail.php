@@ -33,7 +33,7 @@ class FeedbackMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address("contact@halalcorrect.com", $this->feedback->name),
+            from: new Address(env('MAIL_FROM_ADDRESS'), $this->feedback->name),
             subject: 'Feedback Mail',
         );
     }

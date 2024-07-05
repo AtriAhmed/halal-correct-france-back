@@ -33,7 +33,7 @@ class CheckMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address("contact@halalcorrect.com", $this->check->name),
+            from: new Address(env('MAIL_FROM_ADDRESS'), $this->check->name),
             subject: 'Check Mail',
         );
     }
